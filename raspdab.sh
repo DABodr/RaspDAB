@@ -196,7 +196,7 @@ echo -e "$GREEN Compiling ODR-AudioEnc $NORMAL"
 git clone https://github.com/Opendigitalradio/ODR-AudioEnc.git
 pushd ODR-AudioEnc
 ./bootstrap
-./configure --enable-jack --enable-vlc
+./configure --enable-alsa --enable-jack --enable-vlc
 make
 sudo make install
 popd
