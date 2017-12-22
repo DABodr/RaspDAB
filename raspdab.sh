@@ -25,7 +25,7 @@ if [ $(lsb_release -d | grep -c wheezy) -eq 1 ] ; then
     echo "Warning, debian wheezy is not supported anymore"
     echo -e $NORMAL
     exit 1
-elif [ $(lsb_release -d | grep -c jessie) -eq 1 ] ; then
+elif [ $(lsb_release -d | grep -c stretch) -eq 1 ] ; then
     DISTRO="stretch"
 fi
 
