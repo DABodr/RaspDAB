@@ -25,8 +25,8 @@ if [ $(lsb_release -d | grep -c wheezy) -eq 1 ] ; then
     echo "Warning, debian wheezy is not supported anymore"
     echo -e $NORMAL
     exit 1
-elif [ $(lsb_release -d | grep -c stretch) -eq 1 ] ; then
-    DISTRO="stretch"
+elif [ $(lsb_release -d | grep -c jessie) -eq 1 ] ; then
+    DISTRO="jessie"
 fi
 
 echo
@@ -40,7 +40,7 @@ echo $DISTRO
 if [ "$DISTRO" == "unknown" ] ; then
     echo -e $RED
     echo "You seem to be running something else than"
-    echo "debian stretch. This script doesn't"
+    echo "debian jessie. This script doesn't"
     echo "support your distribution."
     echo -e $NORMAL
     exit 1
