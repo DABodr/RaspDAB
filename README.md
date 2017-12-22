@@ -1,4 +1,4 @@
-Il s'agit d'une version modifiée pour une prise en charge d'ALSA et fonctionnant avec Raspbian Stretch.
+Il s'agit d'une version modifiée pour une prise en charge d'ALSA et fonctionnant avec Raspbian Jessie.
 
 # RaspDAB
 A practical guide for an ODR-mmbtools automated DAB+ micro transmitter using Raspberry Pi and EasyDab v2. May also be useful for other Linux based installations.
