@@ -169,14 +169,14 @@ sudo make install
 popd
 
 #COMMENTED OUT FOR RASPDAB
-#echo -e "$GREEN Compiling ODR-DabMod $NORMAL"
-#git clone https://github.com/Opendigitalradio/ODR-DabMod.git
-#pushd ODR-DabMod
-#./bootstrap.sh
-#./configure --enable-zeromq --enable-fft-simd
-#make
-#sudo make install
-#popd
+echo -e "$GREEN Compiling ODR-DabMod $NORMAL"
+git clone https://github.com/Opendigitalradio/ODR-DabMod.git
+pushd ODR-DabMod
+./bootstrap.sh
+./configure --enable-zeromq --enable-fft-simd
+make
+sudo make install
+popd
 
 echo -e "$GREEN Compiling fdk-aac library $NORMAL"
 git clone https://github.com/Opendigitalradio/fdk-aac.git
