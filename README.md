@@ -1,4 +1,6 @@
 Il s'agit d'une version modifiée pour une prise en charge d'ALSA et fonctionnant avec Raspbian Jessie.
+La partie concernant ODR-DabMod a été dé-commenté afin d'activer ODR-DabMod. 
+Attention, dans le cas d'une utilisation avec une carte EasyDAB v2, il faut re-commenté cette partie car c'est l'EasyDAB qui module (en hardware)
 
 # RaspDAB
 A practical guide for an ODR-mmbtools automated DAB+ micro transmitter using Raspberry Pi and EasyDab v2. May also be useful for other Linux based installations.
