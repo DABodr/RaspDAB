@@ -118,19 +118,19 @@ mkdir dab || exit
 cd dab || exit
 
 #COMMENTED OUT FOR RASPDAB
-echo -e "$GREEN Compiling UHD $NORMAL"
-git clone http://github.com/EttusResearch/uhd.git
-pushd uhd
-git checkout release_003_009_001
-mkdir build
-cd build
-cmake ../host
-make
-sudo make install
-popd
+#echo -e "$GREEN Compiling UHD $NORMAL"
+#git clone http://github.com/EttusResearch/uhd.git
+#pushd uhd
+#git checkout release_003_009_001
+#mkdir build
+#cd build
+#cmake ../host
+#make
+#sudo make install
+#popd
 
-echo -e "$GREEN Downloading UHD device images $NORMAL"
-sudo /usr/local/lib/uhd/utils/uhd_images_downloader.py
+#echo -e "$GREEN Downloading UHD device images $NORMAL"
+#sudo /usr/local/lib/uhd/utils/uhd_images_downloader.py
 
 sudo apt-get -y install libzmq3-dev libzmq3
 
@@ -196,7 +196,7 @@ echo -e "$GREEN Compiling ODR-AudioEnc $NORMAL"
 git clone https://github.com/Opendigitalradio/ODR-AudioEnc.git
 pushd ODR-AudioEnc
 ./bootstrap
-./configure --enable-alsa --enable-jack --enable-vlc
+./configure --enable-alsa --enable-jack --enable-vlc --disable-uhd
 make
 sudo make install
 popd
