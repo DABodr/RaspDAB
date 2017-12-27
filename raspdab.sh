@@ -173,7 +173,7 @@ echo -e "$GREEN Compiling ODR-DabMod $NORMAL"
 git clone https://github.com/Opendigitalradio/ODR-DabMod.git
 pushd ODR-DabMod
 ./bootstrap.sh
-./configure --enable-zeromq
+./configure --enable-zeromq --disable-output-uhd 
 make
 sudo make install
 popd
