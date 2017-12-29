@@ -28,7 +28,7 @@ services {
         id 0x6354
     }
     srv_radio3 {
-        label "NOV FM"
+        label "SUN"
         id 0x6315
     }
     srv_radio4 {
@@ -92,8 +92,8 @@ components {
         figtype 0x2
     }
     comp_radio3 {
-        label "NOV FM"
-        shortlabel "NOV"
+        label "SUN"
+        shortlabel "SUN"
         service srv_radio3
         subchannel sub_radio3
         figtype 0x2
