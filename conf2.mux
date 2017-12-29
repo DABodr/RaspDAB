@@ -112,6 +112,7 @@ components {
 }
 outputs {
     zmq "zmq+tcp://*:18081"
+    throttle "simul://" 
 }
 
 
