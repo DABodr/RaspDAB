@@ -119,7 +119,7 @@ Pour que les fichiers de configuration soient pris en compte par supervisor :
 
 et rendez-vous sur l’ip de votre raspberry : http://xxx.xxx.x.xxx:9100
 
-![Supervisor Statuts](RaspDAB/Supervisor Status.png)
+![Supervisor Statuts](https://github.com/LyonelB/RaspDAB/raw/master/Supervisor%20Status.png)
 
 # ODR-DabMux
 
