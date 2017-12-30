@@ -80,6 +80,7 @@ A la fin de l'installation, si vous souhaitez vérifier que ODR-Audienc fonction
     $ cd config
     $ mkdir supervisor
     $ mkdir mot
+    $ cd
     $ touch /home/odr/config/mot/radio1.txt
     $ mkfifo /home/odr/config/mot/radio1.pad
     $ sudo mv /home/odr/RaspDAB/enc-radio1.conf /home/odr/config/supervisor
