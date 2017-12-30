@@ -6,16 +6,16 @@ HackRF : https://greatscottgadgets.com/hackrf/
 Plus d’infos sur les modules complémentaires :
 http://wiki.opendigitalradio.org/DAB_hardware
 
-OpenDigitalRadio
+# OpenDigitalRadio
 
 Coté software, je me suis concentré sur la solution open-source : OpenDigitalRadio. J’ai testé l’installation d’OpenDigitalRadio sur un RPI grâce au script très bien documenté sur github : https://github.com/glokhoff/RaspDAB
 
 Pour le test, j’ai utilisé un RPI 3 avec Raspbian Jessie
 
-Préparation
-$ sudo apt-get update
-$ sudo apt-get upgrade
-$ sudo nano /boot/config.txt
+## Préparation
+`$ sudo apt-get update`
+`$ sudo apt-get upgrade`
+`$ sudo nano /boot/config.txt`
 Et ajouter les deux lignes suivantes :
 
 dtoverlay=pi3-disable-bt
@@ -23,15 +23,15 @@ dtoverlay=pi3-disable-wifi
 
 Ajouter l’utilisateur “odr” et donner lui un mot de passe
 
-$ sudo adduser odr
+`$ sudo adduser odr`
 Puis modifier les droits de “odr”
 
-$ sudo visudo -f /etc/sudoers
+`$ sudo visudo -f /etc/sudoers`
 Ajouter la ligne suivante après “root All=(ALL:ALL) ALL”
 
 odr ALL=(ALL:ALL) ALL
 
-$ sudo reboot
+`$ sudo reboot`
 Se connecter en tant qu’utilisateur “odr”
 
 $ su odr
