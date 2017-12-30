@@ -1,4 +1,5 @@
-Attention : Ce tutiriel n'est pas terminé !
+# Attention : Ce tutoriel n'est pas terminé !
+-------------------
 
 
 Depuis l’article sur [le Raspberry et la radio](https://technic2radio.fr/raspberry-pi-radio/), je fouille le net à la recherche d’information dans le but d’écrire un article sur la diffusion en DAB+ et en particulier avec l’utilisation d’un Raspberry Pi. Autant on peut transformer un RPI en micro-émetteur FM (très faible puissance), autant il est impossible de diffuser en DAB+ sans passer par un “module” supplémentaire dont voici la liste :
