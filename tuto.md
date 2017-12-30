@@ -13,16 +13,16 @@ Coté software, je me suis concentré sur la solution open-source : OpenDigitalR
 Pour le test, j’ai utilisé un RPI 3 avec Raspbian Jessie
 
 ## Préparation
-`$ sudo apt-get update`
-
-`$ sudo apt-get upgrade`
-
-`$ sudo nano /boot/config.txt`
+```
+$ sudo apt-get update
+$ sudo apt-get upgrade
+$ sudo nano /boot/config.txt
+```
 
 Et ajouter les deux lignes suivantes :
 
-dtoverlay=pi3-disable-bt
-dtoverlay=pi3-disable-wifi
+>dtoverlay=pi3-disable-bt
+>dtoverlay=pi3-disable-wifi
 
 Ajouter l’utilisateur “odr” et donner lui un mot de passe
 
@@ -40,9 +40,10 @@ odr ALL=(ALL:ALL) ALL
 
 Se connecter en tant qu’utilisateur “odr”
 
-`$ su odr`
-
-`$ cd`
+```
+$ su odr
+$ cd
+```
 
 Installation de ODR mmbTools d’OpenDigitalRadio
 
@@ -54,15 +55,13 @@ supprimer le “#” au début de la ligne commençant par “deb-src”
 
 Nous allons utiliser un fork du script initial “Raspdab” disponible sur ce lien : https://github.com/glokhoff/RaspDAB . À l’instar du script initial, vous aurez la prise en charge d’ALSA et l’installation d’ODR-DabMod
 
-`$ git clone https://github.com/LyonelB/RaspDAB.git`
-
-`$ cd RaspDAB`
-
-`$ chmod +x raspdab.sh`
-
-`$ ls -l`
-
-`$ ./raspdab.sh`
+```
+$ git clone https://github.com/LyonelB/RaspDAB.git
+$ cd RaspDAB
+$ chmod +x raspdab.sh
+$ ls -l
+$ ./raspdab.sh
+```
 
 Appuyer sur “Enter” et allez boire un café, l’installation dure à peu près deux heures …
 Tester si odr-audioenc fonctionne et ouvrir l’aide :
@@ -71,29 +70,24 @@ Tester si odr-audioenc fonctionne et ouvrir l’aide :
 
 # Installation de Supervisor et création des fichiers de configuration
 
-`$ sudo apt-get install supervisor`
-
-`$ mkdir config`
-
-`$ cd config`
-
-`$ mkdir supervisor`
-
-`$ mkdir mot`
-
-`$ touch /home/odr/config/mot/radio1.txt`
-
-`$ mkfifo /home/odr/config/mot/radio1.pad`
-
-`$ sudo nano /home/odr/config/supervisor/enc-radio1.conf`
+```
+$ sudo apt-get install supervisor
+$ mkdir config
+$ cd config
+$ mkdir supervisor
+$ mkdir mot
+$ touch /home/odr/config/mot/radio1.txt
+$ mkfifo /home/odr/config/mot/radio1.pad
+$ sudo nano /home/odr/config/supervisor/enc-radio1.conf
+```
 
 Ajoutez le texte : https://raw.githubusercontent.com/LyonelB/RaspDAB/master/enc-radio1.conf
 
-`$ touch /home/odr/config/mot/radio2.txt`
-
-`$ mkfifo /home/odr/config/mot/radio2.pad`
-
-`$ sudo nano /home/odr/config/supervisor/enc-radio2.conf`
+```
+$ touch /home/odr/config/mot/radio2.txt
+$ mkfifo /home/odr/config/mot/radio2.pad
+$ sudo nano /home/odr/config/supervisor/enc-radio2.conf
+```
 
 Ajoutez le texte : https://raw.githubusercontent.com/LyonelB/RaspDAB/master/enc-radio2.conf
 
@@ -101,11 +95,11 @@ Ajoutez le texte : https://raw.githubusercontent.com/LyonelB/RaspDAB/master/enc-
 
 Ajoutez le texte : https://raw.githubusercontent.com/LyonelB/RaspDAB/master/conf.mux
 
-`$ sudo ln -s /home/odr/config/supervisor/enc-radio1.conf /etc/supervisor/conf.d/enc-radio1.conf`
-
-`$ sudo ln -s /home/odr/config/supervisor/enc-radio2.conf /etc/supervisor/conf.d/enc-radio2.conf`
-
-`$ sudo nano /etc/supervisor/supervisord.conf`
+```
+$ sudo ln -s /home/odr/config/supervisor/enc-radio1.conf /etc/supervisor/conf.d/enc-radio1.conf
+$ sudo ln -s /home/odr/config/supervisor/enc-radio2.conf /etc/supervisor/conf.d/enc-radio2.conf
+$ sudo nano /etc/supervisor/supervisord.conf
+```
 
 et ajoutez les lignes suivantes :
 
@@ -114,9 +108,10 @@ port = 9100
 username = user ; Auth username
 password = pass ; Auth password
 
-`$ sudo supervisorctl reread`
-
-`$ sudo supervisorctl update`
+```
+$ sudo supervisorctl reread
+$ sudo supervisorctl update
+```
 
 et rendez-vous sur l’ip de votre raspberry : http://xxx.xxx.x.xxx:9100
 
