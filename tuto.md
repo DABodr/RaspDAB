@@ -17,9 +17,10 @@ L'objectif de ce tutoriel est de simuler une diffusion en DAB+.
 
 Coté software, je me suis concentré sur la solution open-source : [OpenDigitalRadio](http://www.opendigitalradio.org/). J’ai testé l’installation d’OpenDigitalRadio sur un RPI grâce au script très bien documenté sur github : https://github.com/glokhoff/RaspDAB.
 
-Pour le test, j’ai utilisé un RPI 3 avec Raspbian Jessie
+Pour le test, j’ai utilisé un RPI 3 avec [Raspbian Jessie](http://downloads.raspberrypi.org/raspbian/images/raspbian-2017-07-05/)
 
 ## Préparation
+
 ```
 $ sudo apt-get update
 $ sudo apt-get upgrade
@@ -128,3 +129,6 @@ et rendez-vous sur l’ip de votre raspberry : http://xxx.xxx.x.xxx:9100
 Tout est prêt ! Il suffit de lancer la commande suivante :
 
 `$ odr-dabmux /home/odr/config/conf.mux`
+
+# Prochaine étape : installation et "écoute" du flux par Dablin 
+-------------------
