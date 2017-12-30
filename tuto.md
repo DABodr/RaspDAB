@@ -1,8 +1,9 @@
 Depuis l’article sur le Raspberry et la radio, je fouille le net à la recherche d’information dans le but d’écrire un article sur la diffusion en DAB+ et en particulier avec l’utilisation d’un Raspberry Pi. Autant on peut transformer un RPI en micro-émetteur FM (très faible puissance), autant il est impossible de diffuser en DAB+ sans passer par un “module” supplémentaire dont voici la liste :
 
-EasyDAB v2 : http://tipok.org.ua/node/46
-Ettus USRP B100, B200, USRP1 … : https://www.ettus.com/
-HackRF : https://greatscottgadgets.com/hackrf/
+- EasyDAB v2 : http://tipok.org.ua/node/46
+- Ettus USRP B100, B200, USRP1 … : https://www.ettus.com/
+- HackRF : https://greatscottgadgets.com/hackrf/
+
 Plus d’infos sur les modules complémentaires :
 http://wiki.opendigitalradio.org/DAB_hardware
 
