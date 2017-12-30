@@ -21,11 +21,9 @@ Pour le test, j’ai utilisé un RPI 3 avec [Raspbian Jessie](http://downloads.r
 
 ## Préparation
 
-```
-$ sudo apt-get update
-$ sudo apt-get upgrade
-$ sudo nano /boot/config.txt
-```
+    $ sudo apt-get update
+    $ sudo apt-get upgrade
+    $ sudo nano /boot/config.txt
 
 Et ajouter les deux lignes suivantes :
 
@@ -34,80 +32,70 @@ Et ajouter les deux lignes suivantes :
 
 Ajouter l’utilisateur “odr” et donner lui un mot de passe
 
-`$ sudo adduser odr`
+    $ sudo adduser odr
 
 Puis modifier les droits de “odr”
 
-`$ sudo visudo -f /etc/sudoers`
+    $ sudo visudo -f /etc/sudoers
 
 Ajouter la ligne suivante après “root All=(ALL:ALL) ALL”
 
     odr ALL=(ALL:ALL) ALL
 
-`$ sudo reboot`
+    $ sudo reboot
 
 Se connecter en tant qu’utilisateur “odr”
 
-```
-$ su odr
-$ cd
-```
+    $ su odr
+    $ cd
 
 Installation de ODR mmbTools d’OpenDigitalRadio
 
-`$ sudo nano /etc/apt/sources.list`
+    $ sudo nano /etc/apt/sources.list
 
 supprimer le “#” au début de la ligne commençant par “deb-src”
 
-`$ sudo apt-get update`
+    $ sudo apt-get update
 
 Nous allons utiliser un fork du script initial “Raspdab” disponible sur ce lien : https://github.com/glokhoff/RaspDAB . À l’instar du script initial, vous aurez la prise en charge d’ALSA et l’installation d’ODR-DabMod
 
-```
-$ git clone https://github.com/LyonelB/RaspDAB.git
-$ cd RaspDAB
-$ chmod +x raspdab.sh
-$ ls -l
-$ ./raspdab.sh
-```
+    $ git clone https://github.com/LyonelB/RaspDAB.git
+    $ cd RaspDAB
+    $ chmod +x raspdab.sh
+    $ ls -l
+    $ ./raspdab.sh
 
 Appuyer sur “Enter” et allez boire un café, l’installation dure à peu près deux heures …
 Tester si odr-audioenc fonctionne et ouvrir l’aide :
 
-`$ odr-audioenc -h`
+    $ odr-audioenc -h
 
 # Installation de Supervisor et création des fichiers de configuration
 
-```
-$ sudo apt-get install supervisor
-$ mkdir config
-$ cd config
-$ mkdir supervisor
-$ mkdir mot
-$ touch /home/odr/config/mot/radio1.txt
-$ mkfifo /home/odr/config/mot/radio1.pad
-$ sudo nano /home/odr/config/supervisor/enc-radio1.conf
-```
+    $ sudo apt-get install supervisor
+    $ mkdir config
+    $ cd config
+    $ mkdir supervisor
+    $ mkdir mot
+    $ touch /home/odr/config/mot/radio1.txt
+    $ mkfifo /home/odr/config/mot/radio1.pad
+    $ sudo nano /home/odr/config/supervisor/enc-radio1.conf
 
 Ajoutez le texte : https://raw.githubusercontent.com/LyonelB/RaspDAB/master/enc-radio1.conf
 
-```
-$ touch /home/odr/config/mot/radio2.txt
-$ mkfifo /home/odr/config/mot/radio2.pad
-$ sudo nano /home/odr/config/supervisor/enc-radio2.conf
-```
+    $ touch /home/odr/config/mot/radio2.txt
+    $ mkfifo /home/odr/config/mot/radio2.pad
+    $ sudo nano /home/odr/config/supervisor/enc-radio2.conf
 
 Ajoutez le texte : https://raw.githubusercontent.com/LyonelB/RaspDAB/master/enc-radio2.conf
 
-`$ sudo nano /home/odr/config/conf.mux`
+    $ sudo nano /home/odr/config/conf.mux
 
 Ajoutez le texte : https://raw.githubusercontent.com/LyonelB/RaspDAB/master/conf.mux
 
-```
-$ sudo ln -s /home/odr/config/supervisor/enc-radio1.conf /etc/supervisor/conf.d/enc-radio1.conf
-$ sudo ln -s /home/odr/config/supervisor/enc-radio2.conf /etc/supervisor/conf.d/enc-radio2.conf
-$ sudo nano /etc/supervisor/supervisord.conf
-```
+    $ sudo ln -s /home/odr/config/supervisor/enc-radio1.conf /etc/supervisor/conf.d/enc-radio1.conf
+    $ sudo ln -s /home/odr/config/supervisor/enc-radio2.conf /etc/supervisor/conf.d/enc-radio2.conf
+    $ sudo nano /etc/supervisor/supervisord.conf
 
 et ajoutez les lignes suivantes :
 
@@ -116,10 +104,8 @@ et ajoutez les lignes suivantes :
     username = user ; Auth username
     password = pass ; Auth password
 
-```
-$ sudo supervisorctl reread
-$ sudo supervisorctl update
-```
+    $ sudo supervisorctl reread
+    $ sudo supervisorctl update
 
 et rendez-vous sur l’ip de votre raspberry : http://xxx.xxx.x.xxx:9100
 
@@ -127,7 +113,7 @@ et rendez-vous sur l’ip de votre raspberry : http://xxx.xxx.x.xxx:9100
 
 Tout est prêt ! Il suffit de lancer la commande suivante :
 
-`$ odr-dabmux /home/odr/config/conf.mux`
+    $ odr-dabmux /home/odr/config/conf.mux
 
 # Prochaine étape : installation et "écoute" du flux par Dablin 
 -------------------
