@@ -69,7 +69,7 @@ Nous allons utiliser un fork du script initial “Raspdab” disponible sur ce l
     $ ./raspdab.sh
 
 Appuyer sur “Enter” et allez boire un café, l’installation dure à peu près deux heures …
-Tester si odr-audioenc fonctionne et ouvrir l’aide :
+A la fin de l'installation, si vous souhaitez vérifier que ODR-Audienc fonctionnne, vos pouvez ouvrir "l'aide" :
 
     $ odr-audioenc -h
 
@@ -82,19 +82,24 @@ Tester si odr-audioenc fonctionne et ouvrir l’aide :
     $ mkdir mot
     $ touch /home/odr/config/mot/radio1.txt
     $ mkfifo /home/odr/config/mot/radio1.pad
-    $ sudo nano /home/odr/config/supervisor/enc-radio1.conf
+    $ sudo mv /home/odr/RaspDAB/enc-radio1.conf /home/odr/config/supervisor
+    
+Vous pouvez éditer le fichier de configuration pour modifier l'url de streaming de la "radio1" avec la commande : 
 
-Ajoutez le texte : https://raw.githubusercontent.com/LyonelB/RaspDAB/master/enc-radio1.conf
+    $ sudo nano /home/odr/config/supervisor/enc-radio1.conf
+    
+Il faut renouveller la création des fichiers pour la seconde radio :
 
     $ touch /home/odr/config/mot/radio2.txt
     $ mkfifo /home/odr/config/mot/radio2.pad
     $ sudo nano /home/odr/config/supervisor/enc-radio2.conf
+    $ sudo mv /home/odr/RaspDAB/enc-radio2.conf /home/odr/config/supervisor
+    
+On passe maintenant à la configuration du "mux" :
 
-Ajoutez le texte : https://raw.githubusercontent.com/LyonelB/RaspDAB/master/enc-radio2.conf
-
-    $ sudo nano /home/odr/config/conf.mux
-
-Ajoutez le texte : https://raw.githubusercontent.com/LyonelB/RaspDAB/master/conf.mux
+    $ sudo mv /home/odr/RaspDAB/conf.mux /home/odr/config
+    
+On ajoute des "liens" à supervisor :
 
     $ sudo ln -s /home/odr/config/supervisor/enc-radio1.conf /etc/supervisor/conf.d/enc-radio1.conf
     $ sudo ln -s /home/odr/config/supervisor/enc-radio2.conf /etc/supervisor/conf.d/enc-radio2.conf
@@ -119,5 +124,7 @@ et rendez-vous sur l’ip de votre raspberry : http://xxx.xxx.x.xxx:9100
 Tout est prêt ! Il suffit de lancer la commande suivante :
 
     $ odr-dabmux /home/odr/config/conf.mux
+    
+Vous avez maintenant un seul flux contenant vos radios et leurs data le port 18081.
 
 # Prochaine étape : installation et "écoute" du flux par Dablin
