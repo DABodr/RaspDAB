@@ -1,4 +1,7 @@
-Depuis l’article sur le Raspberry et la radio, je fouille le net à la recherche d’information dans le but d’écrire un article sur la diffusion en DAB+ et en particulier avec l’utilisation d’un Raspberry Pi. Autant on peut transformer un RPI en micro-émetteur FM (très faible puissance), autant il est impossible de diffuser en DAB+ sans passer par un “module” supplémentaire dont voici la liste :
+Attention : Ce tutiriel n'est pas terminé !
+
+
+Depuis l’article sur [le Raspberry et la radio](https://technic2radio.fr/raspberry-pi-radio/), je fouille le net à la recherche d’information dans le but d’écrire un article sur la diffusion en DAB+ et en particulier avec l’utilisation d’un Raspberry Pi. Autant on peut transformer un RPI en micro-émetteur FM (très faible puissance), autant il est impossible de diffuser en DAB+ sans passer par un “module” supplémentaire dont voici la liste :
 
 - EasyDAB v2 : http://tipok.org.ua/node/46
 - Ettus USRP B100, B200, USRP1 … : https://www.ettus.com/
@@ -7,9 +10,11 @@ Depuis l’article sur le Raspberry et la radio, je fouille le net à la recherc
 Plus d’infos sur les modules complémentaires :
 http://wiki.opendigitalradio.org/DAB_hardware
 
+L'objectif de ce tutoriel est de simuler une diffusion en DAB+. 
+
 # OpenDigitalRadio
 
-Coté software, je me suis concentré sur la solution open-source : OpenDigitalRadio. J’ai testé l’installation d’OpenDigitalRadio sur un RPI grâce au script très bien documenté sur github : https://github.com/glokhoff/RaspDAB
+Coté software, je me suis concentré sur la solution open-source : [OpenDigitalRadio](http://www.opendigitalradio.org/). J’ai testé l’installation d’OpenDigitalRadio sur un RPI grâce au script très bien documenté sur github : https://github.com/glokhoff/RaspDAB.
 
 Pour le test, j’ai utilisé un RPI 3 avec Raspbian Jessie
 
@@ -23,6 +28,7 @@ $ sudo nano /boot/config.txt
 Et ajouter les deux lignes suivantes :
 
 >dtoverlay=pi3-disable-bt
+
 >dtoverlay=pi3-disable-wifi
 
 Ajouter l’utilisateur “odr” et donner lui un mot de passe
@@ -35,7 +41,7 @@ Puis modifier les droits de “odr”
 
 Ajouter la ligne suivante après “root All=(ALL:ALL) ALL”
 
-odr ALL=(ALL:ALL) ALL
+>odr ALL=(ALL:ALL) ALL
 
 `$ sudo reboot`
 
