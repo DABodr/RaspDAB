@@ -125,7 +125,7 @@ Tout est prêt ! Il suffit de lancer la commande suivante :
 
     $ odr-dabmux /home/odr/config/conf.mux
     
-Vous avez maintenant un seul flux au format ETI et contenant vos radios et leurs data sur le port 18081.
+Votre "multiplexeur" est prêt ! Vous avez maintenant un seul flux au format [ETI](http://wiki.opendigitalradio.org/Ensemble_Transport_Interface) contenant les flux audio des radios et leurs data sur le port 18081.
 
 # Installation de Dablin
 
