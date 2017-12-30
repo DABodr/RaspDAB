@@ -29,9 +29,8 @@ $ sudo nano /boot/config.txt
 
 Et ajouter les deux lignes suivantes :
 
->dtoverlay=pi3-disable-bt
-
->dtoverlay=pi3-disable-wifi
+    dtoverlay=pi3-disable-bt
+    dtoverlay=pi3-disable-wifi
 
 Ajouter l’utilisateur “odr” et donner lui un mot de passe
 
@@ -43,7 +42,7 @@ Puis modifier les droits de “odr”
 
 Ajouter la ligne suivante après “root All=(ALL:ALL) ALL”
 
->odr ALL=(ALL:ALL) ALL
+    odr ALL=(ALL:ALL) ALL
 
 `$ sudo reboot`
 
@@ -112,10 +111,10 @@ $ sudo nano /etc/supervisor/supervisord.conf
 
 et ajoutez les lignes suivantes :
 
->[inet_http_server]
->port = 9100
->username = user ; Auth username
->password = pass ; Auth password
+    [inet_http_server]
+    port = 9100
+    username = user ; Auth username
+    password = pass ; Auth password
 
 ```
 $ sudo supervisorctl reread
