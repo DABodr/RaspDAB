@@ -103,10 +103,10 @@ $ sudo nano /etc/supervisor/supervisord.conf
 
 et ajoutez les lignes suivantes :
 
-[inet_http_server]
-port = 9100
-username = user ; Auth username
-password = pass ; Auth password
+>[inet_http_server]
+>port = 9100
+>username = user ; Auth username
+>password = pass ; Auth password
 
 ```
 $ sudo supervisorctl reread
