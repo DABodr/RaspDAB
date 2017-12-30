@@ -23,20 +23,20 @@ Pour le test, j’ai utilisé un RPI 3 avec [Raspbian Jessie](http://downloads.r
     $ sudo apt-get upgrade
     $ sudo nano /boot/config.txt
 
-Et ajouter les deux lignes suivantes :
+Ajoutez les deux lignes suivantes :
 
     dtoverlay=pi3-disable-bt
     dtoverlay=pi3-disable-wifi
 
-Ajouter l’utilisateur “odr” et donner lui un mot de passe
+Ajoutez l’utilisateur “odr” et donner lui un mot de passe
 
     $ sudo adduser odr
 
-Puis modifier les droits de “odr”
+Puis modifiez les droits de “odr”
 
     $ sudo visudo -f /etc/sudoers
 
-Ajouter la ligne suivante après “root All=(ALL:ALL) ALL”
+Ajoutez la ligne suivante après “root All=(ALL:ALL) ALL”
 
     odr ALL=(ALL:ALL) ALL
 
@@ -53,11 +53,11 @@ Installation de ODR mmbTools d’OpenDigitalRadio
 
     $ sudo nano /etc/apt/sources.list
 
-supprimer le “#” au début de la ligne commençant par “deb-src”
+Supprimez le “#” au début de la ligne commençant par “deb-src”
 
     $ sudo apt-get update
 
-Nous allons utiliser un fork du script initial “Raspdab” disponible sur ce lien : https://github.com/glokhoff/RaspDAB . À l’instar du script initial, vous aurez la prise en charge d’ALSA et l’installation d’ODR-DabMod
+Nous allons utiliser un fork du script initial “Raspdab” disponible sur ce lien : https://github.com/glokhoff/RaspDAB . À l’instar du dossier initial, vous aurez tous les fichiers de configuration nécessaire pour la poursuite du tutoriel.
 
     $ git clone https://github.com/LyonelB/RaspDAB.git
     $ cd RaspDAB
@@ -65,7 +65,7 @@ Nous allons utiliser un fork du script initial “Raspdab” disponible sur ce l
     $ ls -l
     $ ./raspdab.sh
 
-Appuyer sur “Enter” et allez boire un café, l’installation dure à peu près deux heures …
+Appuyez sur “Enter” et allez boire un café, l’installation dure à peu près deux heures …
 A la fin de l'installation, si vous souhaitez vérifier que ODR-Audienc fonctionnne, vos pouvez ouvrir "l'aide" :
 
     $ odr-audioenc -h
@@ -97,7 +97,7 @@ On passe maintenant à la configuration du "mux" :
 
     $ sudo mv /home/odr/RaspDAB/conf.mux /home/odr/config
     
-On ajoute des "liens" à supervisor :
+Ajoutez des "liens" à supervisor :
 
     $ sudo ln -s /home/odr/config/supervisor/enc-radio1.conf /etc/supervisor/conf.d/enc-radio1.conf
     $ sudo ln -s /home/odr/config/supervisor/enc-radio2.conf /etc/supervisor/conf.d/enc-radio2.conf
@@ -115,7 +115,7 @@ Pour que les fichiers de configuration soient pris en compte par supervisor :
     $ sudo supervisorctl reread
     $ sudo supervisorctl update
 
-et rendez-vous sur l’ip de votre raspberry : http://xxx.xxx.x.xxx:9100
+Rendez-vous sur l’ip de votre raspberry : http://xxx.xxx.x.xxx:9100
 
 ![Supervisor Statuts](https://github.com/LyonelB/RaspDAB/raw/master/Supervisor%20Status.png)
 
@@ -153,8 +153,6 @@ Pour lancer DABlin avec l'interface graphique, si votre Raspberry Pi est relié 
     $ ./zmq-sub 127.0.0.1 9100 | dablin_gtk -s 0x8daa #
 
 # Notes
-
-→ Pas besoin de DABMod : modifier le fichier raspdab.sh
 
 https://groups.google.com/forum/#!topic/crc-mmbtools/etUFcqdZSmc
 
