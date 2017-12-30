@@ -141,7 +141,6 @@ Votre "multiplexeur" est prêt ! Vous avez maintenant un seul flux au format [ET
     
 # Installation de ZMQ ETI Receiver
 
-    $ git clone https://github.com/mpbraendli/mmbtools-aux.git
     $ cd mmbtools-aux/zmqtest/zmq-sub
     $ make
     
