@@ -42,6 +42,8 @@ Ajouter la ligne suivante après “root All=(ALL:ALL) ALL”
 
     odr ALL=(ALL:ALL) ALL
 
+Et rebootez votre Raspberry Pi :
+
     $ sudo reboot
 
 Se connecter en tant qu’utilisateur “odr”
@@ -103,6 +105,8 @@ et ajoutez les lignes suivantes :
     port = 9100
     username = user ; Auth username
     password = pass ; Auth password
+
+Pour que les fichiers de configuration soient pris en compte par supervisor :
 
     $ sudo supervisorctl reread
     $ sudo supervisorctl update
