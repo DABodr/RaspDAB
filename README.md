@@ -62,7 +62,6 @@ Nous allons utiliser un fork du script initial “Raspdab” disponible sur ce l
     $ git clone https://github.com/LyonelB/RaspDAB.git
     $ cd RaspDAB
     $ chmod +x raspdab.sh
-    $ ls -l
     $ ./raspdab.sh
 
 Appuyez sur “Enter” et allez boire un café, l’installation dure à peu près deux heures …
