@@ -130,4 +130,39 @@ Tout est prêt ! Il suffit de lancer la commande suivante :
     
 Vous avez maintenant un seul flux contenant vos radios et leurs data le port 18081.
 
-# Prochaine étape : installation et "écoute" du flux par Dablin
+# Installation de Dablin
+
+    $ sudo apt-get install git gcc g++ cmake
+    $ sudo apt-get install libmpg123-dev libfaad-dev libsdl2-dev libgtkmm-3.0-dev
+    $ git clone https://github.com/Opendigitalradio/dablin.git
+    $ cd dablin
+    $ mkdir build
+    $ cd build
+    $ cmake ..
+    $ make
+    $ sudo make install
+    
+# Installation de ZMQ ETI Receiver
+
+    $ git clone https://github.com/mpbraendli/mmbtools-aux.git
+    $ cd mmbtools-aux/zmqtest/zmq-sub
+    $ make
+    
+# Lecture du flux ETI via DABlin
+
+    $ ./zmq-sub 127.0.0.1 18081 | dablin -s 0x8daa
+    
+Pour lancer DABlin avec l'interface graphique, si votre Raspberry Pi est relié à un écran
+
+    $ ./zmq-sub 127.0.0.1 9100 | dablin_gtk -s 0x8daa #
+
+# Notes
+
+→ Pas besoin de DABMod : modifier le fichier raspdab.sh
+
+https://groups.google.com/forum/#!topic/crc-mmbtools/etUFcqdZSmc
+
+http://wiki.opendigitalradio.org/Etisnoop
+
+https://github.com/mpbraendli/mmbtools-aux/tree/master/zmqtest/zmq-sub
+
