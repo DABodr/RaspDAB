@@ -1,5 +1,3 @@
-#fichier situé : /home/odr/config/mux/conf.mux
-
 general {
     dabmode 1
     nbframes 0
