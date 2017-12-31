@@ -149,11 +149,11 @@ Votre "multiplexeur" est prêt ! Vous avez maintenant un seul flux au format [ET
     
 # Lecture du flux ETI via DABlin
 
-    $ RaspDAB/dab/mmbtools-aux/zmqtest/zmq-sub/zmq-sub 127.0.0.1 18081 | dablin -s 0x8daa
+    $ /home/odr/RaspDAB/dab/mmbtools-aux/zmqtest/zmq-sub/zmq-sub 127.0.0.1 18081 | dablin -s 0xF005
     
 Pour lancer DABlin avec l'interface graphique, si votre Raspberry Pi est relié à un écran
 
-    $ ./zmq-sub 127.0.0.1 9100 | dablin_gtk -s 0x8daa #
+    $ ./zmq-sub 127.0.0.1 9100 | dablin_gtk -s 0xF005 #
 
 # Notes
 
