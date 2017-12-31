@@ -139,11 +139,13 @@ Votre "multiplexeur" est prêt ! Vous avez maintenant un seul flux au format [ET
     $ cmake ..
     $ make
     $ sudo make install
+    $ cd
     
 # Installation de ZMQ ETI Receiver
 
     $ cd mmbtools-aux/zmqtest/zmq-sub
     $ make
+    $ cd
     
 # Lecture du flux ETI via DABlin
 
