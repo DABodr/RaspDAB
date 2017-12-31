@@ -71,6 +71,7 @@ A la fin de l'installation, si vous souhaitez vérifier que ODR-Audienc fonction
 
 # Installation de Supervisor et création des fichiers de configuration
 
+    $ cd
     $ sudo apt-get install supervisor
     $ mkdir config
     $ cd config
@@ -113,6 +114,7 @@ Pour que les fichiers de configuration soient pris en compte par supervisor :
 
     $ sudo supervisorctl reread
     $ sudo supervisorctl update
+    $ sudo reboot
 
 Rendez-vous sur l’ip de votre raspberry : http://xxx.xxx.x.xxx:9100
 
