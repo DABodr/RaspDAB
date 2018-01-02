@@ -73,34 +73,20 @@ A la fin de l'installation, si vous souhaitez vérifier que ODR-Audienc fonction
 
     $ cd
     $ sudo apt-get install supervisor
-    $ mkdir config
-    $ cd config
-    $ mkdir supervisor
-    $ mkdir mot
-    $ cd
-    $ touch /home/odr/config/mot/radio1.txt
-    $ mkfifo /home/odr/config/mot/radio1.pad
-    $ sudo mv /home/odr/RaspDAB/enc-radio1.conf /home/odr/config/supervisor
+    $ sudo mv /home/odr/RaspDAB/config /home/odr
+    $ mkfifo /home/odr/config/mot/radio1.pad /home/odr/config/mot/radio2.pad /home/odr/config/mot/radio3.pad /home/odr/config/mot/radio4.pad
     
 Vous pouvez éditer le fichier de configuration pour modifier l'url de streaming de la "radio1" avec la commande : 
 
     $ sudo nano /home/odr/config/supervisor/enc-radio1.conf
     
-Il faut renouveller la création des fichiers pour la seconde radio :
-
-    $ touch /home/odr/config/mot/radio2.txt
-    $ mkfifo /home/odr/config/mot/radio2.pad
-    $ sudo nano /home/odr/config/supervisor/enc-radio2.conf
-    $ sudo mv /home/odr/RaspDAB/enc-radio2.conf /home/odr/config/supervisor
-    
-On passe maintenant à la configuration du "mux" :
-
-    $ sudo mv /home/odr/RaspDAB/conf.mux /home/odr/config
-    
 Ajoutez des "liens" à supervisor :
 
     $ sudo ln -s /home/odr/config/supervisor/enc-radio1.conf /etc/supervisor/conf.d/enc-radio1.conf
     $ sudo ln -s /home/odr/config/supervisor/enc-radio2.conf /etc/supervisor/conf.d/enc-radio2.conf
+    $ sudo ln -s /home/odr/config/supervisor/enc-radio1.conf /etc/supervisor/conf.d/enc-radio3.conf
+    $ sudo ln -s /home/odr/config/supervisor/enc-radio1.conf /etc/supervisor/conf.d/enc-radio4.conf
+    $ sudo ln -s /home/odr/config/supervisor/mux.conf /etc/supervisor/conf.d/mux.conf
     $ sudo nano /etc/supervisor/supervisord.conf
 
 et ajoutez les lignes suivantes :
@@ -121,16 +107,12 @@ Rendez-vous sur l’ip de votre raspberry : http://xxx.xxx.x.xxx:9100
 ![Supervisor Statuts](https://github.com/LyonelB/RaspDAB/raw/master/Supervisor%20Status.png)
 
 # ODR-DabMux
-
-Tout est prêt ! Il suffit de lancer la commande suivante :
-
-    $ odr-dabmux /home/odr/config/conf.mux
     
-Votre "multiplexeur" est prêt ! Vous avez maintenant un seul flux au format [ETI](http://wiki.opendigitalradio.org/Ensemble_Transport_Interface) contenant les flux audio des radios et leurs data sur le port 18081.
+Votre "multiplexeur" est prêt ! Les flux de vos 4 radios sont encodés par ODR-Dabenc et multiplexés par ODR-Dabmux. ODR-Dabenc et ODR-Dabmux sont lancés automatiquement. Vous pouvez controler leurs statuts via supervisor. Vous avez maintenant un seul flux au format [ETI](http://wiki.opendigitalradio.org/Ensemble_Transport_Interface) contenant les flux audio des radios et leurs data sur le port 18081.
 
 # Installation de Dablin
 
-    $ sudo apt-get install git gcc g++ cmake
+    #$ sudo apt-get install git gcc g++ cmake
     $ sudo apt-get install libmpg123-dev libfaad-dev libsdl2-dev libgtkmm-3.0-dev
     $ git clone https://github.com/Opendigitalradio/dablin.git
     $ cd dablin
@@ -143,6 +125,7 @@ Votre "multiplexeur" est prêt ! Vous avez maintenant un seul flux au format [ET
     
 # Installation de ZMQ ETI Receiver
 
+    $ su odr
     $ cd RaspDAB/dab/mmbtools-aux/zmqtest/zmq-sub
     $ make
     $ cd
@@ -153,7 +136,7 @@ Votre "multiplexeur" est prêt ! Vous avez maintenant un seul flux au format [ET
     
 Pour lancer DABlin avec l'interface graphique, si votre Raspberry Pi est relié à un écran
 
-    $ ./zmq-sub 127.0.0.1 9100 | dablin_gtk -s 0xF005 #
+    $ /home/odr/RaspDAB/dab/mmbtools-aux/zmqtest/zmq-sub/zmq-sub 127.0.0.1 18081 | dablin_gtk -s 0xF005
 
 # Notes
 
