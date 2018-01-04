@@ -9,7 +9,9 @@ Depuis l’article sur [le Raspberry et la radio](https://technic2radio.fr/raspb
 Plus d’infos sur les modules complémentaires :
 http://wiki.opendigitalradio.org/DAB_hardware
 
-L'objectif de ce tutoriel est de simuler une diffusion en DAB+. 
+L'objectif de ce tutoriel est de simuler une diffusion en DAB+ : de l'encodage à la simulation de diffusion en passant par le multiplexage.
+
+![OpenDigitalRadio](https://raw.githubusercontent.com/LyonelB/RaspDAB/master/raspdab.png)
 
 # OpenDigitalRadio
 
