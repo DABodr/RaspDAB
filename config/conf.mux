@@ -30,7 +30,7 @@ services {
         id 0x6315
     }
     srv_radio4 {
-        label "RCF VENDEE"
+        label "JET FM"
         id 0x6217
     }
 }
@@ -97,8 +97,8 @@ components {
         figtype 0x2
     }
         comp_radio4 {
-        label "RCF VENDEE"
-        shortlabel "RCF VENDEE"
+        label "JET FM"
+        shortlabel "JET"
         service srv_radio4
         subchannel sub_radio4
         figtype 0x2
