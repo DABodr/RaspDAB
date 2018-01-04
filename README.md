@@ -137,6 +137,8 @@ Votre "multiplexeur" est prêt ! Les flux de vos 4 radios sont encodés par ODR-
 Pour lancer DABlin avec l'interface graphique, si votre Raspberry Pi est relié à un écran
 
     $ /home/odr/RaspDAB/dab/mmbtools-aux/zmqtest/zmq-sub/zmq-sub 127.0.0.1 18081 | dablin_gtk -s 0xF005
+    
+![DABlin](https://raw.githubusercontent.com/LyonelB/RaspDAB/master/2018-01-04-094242_1440x900_scrot.png)
 
 # Notes
 
