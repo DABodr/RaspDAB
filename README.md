@@ -86,8 +86,8 @@ Ajoutez des "liens" à supervisor :
 
     $ sudo ln -s /home/odr/config/supervisor/enc-radio1.conf /etc/supervisor/conf.d/enc-radio1.conf
     $ sudo ln -s /home/odr/config/supervisor/enc-radio2.conf /etc/supervisor/conf.d/enc-radio2.conf
-    $ sudo ln -s /home/odr/config/supervisor/enc-radio1.conf /etc/supervisor/conf.d/enc-radio3.conf
-    $ sudo ln -s /home/odr/config/supervisor/enc-radio1.conf /etc/supervisor/conf.d/enc-radio4.conf
+    $ sudo ln -s /home/odr/config/supervisor/enc-radio3.conf /etc/supervisor/conf.d/enc-radio3.conf
+    $ sudo ln -s /home/odr/config/supervisor/enc-radio4.conf /etc/supervisor/conf.d/enc-radio4.conf
     $ sudo ln -s /home/odr/config/supervisor/mux.conf /etc/supervisor/conf.d/mux.conf
     $ sudo nano /etc/supervisor/supervisord.conf
 
