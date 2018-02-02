@@ -163,7 +163,7 @@ echo -e "$GREEN Compiling ODR-DabMux $NORMAL"
 git clone https://github.com/Opendigitalradio/ODR-DabMux.git
 pushd ODR-DabMux
 ./bootstrap.sh
-./configure --enable-input-zeromq --enable-output-zeromq --with-boost-libdir=/usr/lib/arm-linux-gnueabihf
+./configure --enable-input-zeromq --enable-output-zeromq
 make
 sudo make install
 popd
