@@ -22,7 +22,6 @@ Pour le test, j’ai utilisé un RPI 3 avec [Raspbian Jessie](http://downloads.r
 ## Préparation
 
     $ sudo apt-get update
-    $ sudo apt-get upgrade
     $ sudo nano /boot/config.txt
 
 Ajoutez les deux lignes suivantes :
