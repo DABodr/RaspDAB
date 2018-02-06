@@ -22,6 +22,7 @@ Pour le test, j’ai utilisé un RPI 3 avec [Raspbian Jessie](http://downloads.r
 ## Préparation
 
     $ sudo apt-get update
+    $ sudo apt-get upgrade
     $ sudo nano /boot/config.txt
 
 Ajoutez les deux lignes suivantes :
@@ -75,7 +76,7 @@ A la fin de l'installation, si vous souhaitez vérifier que ODR-Audienc fonction
     $ cd
     $ sudo apt-get install supervisor
     $ sudo mv /home/odr/RaspDAB/config /home/odr
-    $ mkfifo /home/odr/config/mot/radio1.pad /home/odr/config/mot/radio2.pad /home/odr/config/mot/radio3.pad /home/odr/config/mot/radio4.pad
+    #$ mkfifo /home/odr/config/mot/radio1.pad /home/odr/config/mot/radio2.pad /home/odr/config/mot/radio3.pad /home/odr/config/mot/radio4.pad
     
 Vous pouvez éditer le fichier de configuration pour modifier l'url de streaming de la "radio1" avec la commande : 
 
@@ -113,7 +114,6 @@ Votre "multiplexeur" est prêt ! Les flux de vos 4 radios sont encodés par ODR-
 
 # Installation de Dablin
 
-    #$ sudo apt-get install git gcc g++ cmake
     $ sudo apt-get install libmpg123-dev libfaad-dev libsdl2-dev libgtkmm-3.0-dev
     $ git clone https://github.com/Opendigitalradio/dablin.git
     $ cd dablin
