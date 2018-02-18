@@ -111,7 +111,7 @@ sudo apt-get -y install build-essential git wget \
  python-mako python-requests
 
 # this will install boost, cmake and a lot more
-# sudo apt-get -y build-dep uhd
+sudo apt-get -y build-dep uhd
 
 # stuff to install from source
 mkdir dab || exit
