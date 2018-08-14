@@ -22,7 +22,7 @@ services {
         id 0x6381
     }
     srv_radio2 {
-        label #NEPTUNE FM"
+        label "NEPTUNE FM"
         id 0x6354
     }
     srv_radio3 {
